@@ -50,10 +50,10 @@ export default function Home() {
               <a href={`tel:${business.phone}`} className="btn-outline">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
-              <a
-                href={`https://wa.me/${business.whatsapp}`}
+              
+                <a href={`https://wa.me/${business.whatsapp}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-whatsapp"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
@@ -76,8 +76,8 @@ export default function Home() {
           >
             <div className="relative rounded-lg overflow-hidden glow-card aspect-[4/5] max-w-md mx-auto">
               <img
-                src="https://picsum.photos/id/1062/700/900"
-                alt="Customer being helped at the service counter"
+                src="https://picsum.photos/id/1076/700/900"
+                alt="Customer being helped with documentation at the service counter"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">Explore by Category</h2>
-            <p className="text-muted mt-1">Six ways we help — pick what you need.</p>
+            <p className="text-muted mt-1">{categories.length} ways we help — pick what you need.</p>
           </div>
         </div>
         <motion.div
@@ -169,7 +169,7 @@ export default function Home() {
         <div className="container-page grid grid-cols-2 sm:grid-cols-4 gap-8">
           <StatCounter to={12} suffix="+" label="Years serving locally" />
           <StatCounter to={5000} suffix="+" label="Requests completed" />
-          <StatCounter to={14} label="Services offered" />
+          <StatCounter to={services.length} suffix="+" label="Services offered" />
           <StatCounter to={98} suffix="%" label="Customers who return" />
         </div>
       </section>
@@ -194,8 +194,8 @@ export default function Home() {
         </div>
         <div className="glow-card relative h-72">
           <img
-            src="https://picsum.photos/id/164/900/500"
-            alt="Shop storefront"
+            src="https://picsum.photos/id/96/900/500"
+            alt="Inside Shri Ganesh Computer & Studio — printing and service counter"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-ink-gradient" />
@@ -204,7 +204,7 @@ export default function Home() {
               <MapPin className="h-5 w-5 mt-0.5 shrink-0" />
               <p className="text-[15px]">{business.address}</p>
             </div>
-            <a href={business.mapUrl} target="_blank" rel="noreferrer" className="btn-primary w-fit">
+            <a href={business.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-primary w-fit">
               Get Directions
             </a>
           </div>

@@ -85,7 +85,7 @@ export default function Contact() {
                 variants={heroItem}
                 href={c.href}
                 target={c.external ? '_blank' : undefined}
-                rel={c.external ? 'noreferrer' : undefined}
+                rel={c.external ? 'noopener noreferrer' : undefined}
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
                 className="card p-5 flex items-center gap-4 hover:shadow-raised hover:border-marigold/40 transition-all group"
@@ -185,19 +185,19 @@ export default function Contact() {
             className="glow-card min-h-[420px] flex flex-col overflow-hidden"
           >
             <iframe
-  title="Shri Ganesh Computer & Studio location"
-  src={`https://maps.google.com/maps?q=${encodeURIComponent(
-    'Mavai Chauraha, Chhivlaha Road, Fatehpur, Uttar Pradesh'
-  )}&z=15&output=embed`}
-  className="w-full flex-1 min-h-[350px] border-0"
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
+              title="Shri Ganesh Computer & Studio location"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                'Mavai Chauraha, Chhivlaha Road, Fatehpur, Uttar Pradesh'
+              )}&z=15&output=embed`}
+              className="w-full flex-1 min-h-[350px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
             {/* Google Maps Link */}
-            <a
-              href={business.mapUrl}
+            
+             <a href={business.mapUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center justify-between bg-white p-4 border-t border-border hover:bg-primary-light transition-colors"
             >
               <span className="text-sm font-semibold text-primary-dark">

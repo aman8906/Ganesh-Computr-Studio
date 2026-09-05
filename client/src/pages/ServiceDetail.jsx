@@ -224,7 +224,7 @@ export default function ServiceDetail() {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <div className="glow-card sticky top-24 bg-white">
-              
+
               {/* Gradient Top Border */}
               <div className="h-2 bg-gradient-to-r from-marigold via-coral to-teal" />
 
@@ -260,7 +260,7 @@ export default function ServiceDetail() {
                     `Hi, I'd like to know more about ${service.name}`
                   )}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="btn w-full bg-[#25D366] text-white hover:bg-[#1DA851] transition-colors duration-300"
                 >
                   <MessageCircle className="h-4 w-4" />

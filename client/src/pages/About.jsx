@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MessageSquare, Shield, Users, Award, ArrowRight } from 'lucide-react';
-import { business } from '../data/services';
+import { business, services } from '../data/services';
 import { heroReveal, heroItem, staggerGrid, gridItem } from '../animations/variants';
 import StatCounter from '../components/ui/StatCounter';
 
@@ -101,7 +101,7 @@ export default function About() {
         <div className="container-page grid grid-cols-2 sm:grid-cols-4 gap-8">
           <StatCounter to={12} suffix="+" label="Years serving locally" />
           <StatCounter to={5000} suffix="+" label="Requests completed" />
-          <StatCounter to={14} label="Services offered" />
+          <StatCounter to={services.length} suffix="+" label="Services offered" />
           <StatCounter to={98} suffix="%" label="Customers who return" />
         </div>
       </div>

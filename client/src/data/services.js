@@ -288,7 +288,7 @@ export const business = {
   addressHindi: 'मवई चौराहा, छिवलहा रोड, फतेहपुर',
   proprietor: 'Prop. Moolchandra Chaurasiya',
   workingHours: 'Mon–Sat, 9:00 AM – 8:30 PM · Sun, 10:00 AM – 2:00 PM',
-  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mavai+Chauraha+Diwlaha+Road+Fatehpur+Uttar+Pradesh',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mavai+Chauraha+Chhivlaha+Road+Fatehpur+Uttar+Pradesh',
   description:
     'Shri Ganesh Computer & Studio has been helping local residents of Fatehpur with documentation assistance (Aadhaar, PAN, Voter ID, ration card, pension schemes and more), banking services, printing, photography and card design for years. We keep things simple, honest and fast — so you can get in, get help, and get on with your day.',
 };
