@@ -15,7 +15,7 @@ const galleryItems = [
     id: 1,
     title: 'Wedding invitation set',
     category: 'Cards',
-    image: 'https://picsum.photos/id/1048/700/900',
+    image: 'https://file.oyephoto.com/uploads/preview/pre-wedding-couple-photoshoot-ideas-wallpapers-hd-pics-11634648708xnocynjcwp.jpg',
     tag: 'bg-coral text-white',
   },
   {
@@ -50,7 +50,7 @@ const galleryItems = [
     id: 6,
     title: 'Studio portrait print',
     category: 'Photography',
-    image: 'https://picsum.photos/id/338/700/900',
+    image: 'https://tiimg.tistatic.com/fp/1/007/964/full-hd-format-artsy-lens-and-glamour-wedding-photography-services-275.jpg',
     tag: 'bg-teal text-white',
   },
   {
@@ -71,7 +71,7 @@ const galleryItems = [
     id: 9,
     title: 'Wedding decoration setup',
     category: 'Cards',
-    image: 'https://picsum.photos/id/1059/700/900',
+    image: 'https://file.oyephoto.com/uploads/preview/pre-wedding-couple-photoshoot-ideas-wallpapers-hd-pics-11634648708xnocynjcwp.jpg',
     tag: 'bg-coral text-white',
   },
 ];
