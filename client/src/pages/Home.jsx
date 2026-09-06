@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import heroImage from '../assets/hero.png';
 import { Phone, MessageCircle, MapPin, Star, ShieldCheck, Zap } from 'lucide-react';
 import { services, business, categories } from '../data/services';
 import { heroReveal, heroItem, staggerGrid, gridItem } from '../animations/variants';
@@ -76,10 +77,10 @@ export default function Home() {
           >
             <div className="relative rounded-lg overflow-hidden glow-card aspect-[4/5] max-w-md mx-auto">
               <img
-                src="https://picsum.photos/id/1076/700/900"
-                alt="Customer being helped with documentation at the service counter"
-                className="h-full w-full object-cover"
-              />
+  src={heroImage}
+  alt="Customer being helped with documentation at the service counter"
+  className="h-full w-full object-cover"
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
             </div>
 

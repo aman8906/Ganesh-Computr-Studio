@@ -20,7 +20,7 @@ export const categoryVisuals = {
     icon: 'Landmark',
   },
   printing: {
-    image: 'https://picsum.photos/id/48/800/1000',
+    image: 'https://www.dtfshop.in/wp-content/uploads/2026/05/1-2-1.png',
     color: 'from-marigold/10 to-marigold-dark',
     tag: 'bg-marigold text-white',
     icon: 'Printer',

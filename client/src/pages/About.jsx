@@ -4,7 +4,7 @@ import { MessageSquare, Shield, Users, Award, ArrowRight } from 'lucide-react';
 import { business, services } from '../data/services';
 import { heroReveal, heroItem, staggerGrid, gridItem } from '../animations/variants';
 import StatCounter from '../components/ui/StatCounter';
-
+import studioImage from '../assets/studio.jpg';
 const values = [
   {
     icon: MessageSquare,
@@ -56,20 +56,20 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glow-card aspect-[4/3]"
-        >
-          <img
-            src="https://picsum.photos/id/1074/800/600"
-            alt="Inside Shri Ganesh Computer & Studio"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-ink-gradient" />
-        </motion.div>
-      </div>
-
+  initial={{ opacity: 0, scale: 0.94 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="glow-card relative overflow-hidden rounded-2xl aspect-video lg:aspect-[4/3] ring-1 ring-black/5 shadow-xl"
+>
+  <img
+    src={studioImage}
+    alt="Inside Shri Ganesh Computer & Studio"
+    className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+</motion.div>
+  </div>
+         
       {/* Value cards */}
       <div className="container-page py-4">
         <motion.div
