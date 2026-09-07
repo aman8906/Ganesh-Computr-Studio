@@ -19,6 +19,7 @@ export const services = [
       'We guide you through Aadhaar enrolment, printing, and correction — filling the form correctly, organising your supporting documents and booking your slot. We assist with the process; we do not issue the Aadhaar card ourselves.',
     requirements: 'Proof of identity, proof of address, recent photograph.',
     turnaround: 'Same day filing; issuance timeline set by UIDAI.',
+    image: 'https://cloudflare-images.seekho.in/blog-image/compressed-banner/4e3c78bd-3246-4a86-a9c1-5727254cc654/eaee836e204840ceb8f1396ed1de0561.webp',
   },
   {
     slug: 'pan-card-assistance',
@@ -29,6 +30,7 @@ export const services = [
       'Bring your identity and address proof and we will help you complete a new PAN application or a correction request accurately, reducing the chance of rejection.',
     requirements: 'Identity proof, address proof, photograph.',
     turnaround: 'Filed same day; PAN issued by the department.',
+    image: 'https://media.assettype.com/deccanherald%2Fimport%2Fsites%2Fdh%2Ffiles%2Farticle_images%2F2019%2F11%2F05%2FPAN%20Card-1572953366.png?w=undefined&auto=format%2Ccompress&fit=max',
   },
   {
     slug: 'voter-id-assistance',
@@ -38,6 +40,7 @@ export const services = [
     description: 'We help you fill the correct election-commission form for new registration, address change or correction.',
     requirements: 'Age and address proof, photograph.',
     turnaround: 'Filed same day; approval timeline set by the Election Commission.',
+    image: 'https://digilawyer.blr1.cdn.digitaloceanspaces.com/812d7241-da3f-492e-9c63-35860b396f3b.webp',
   },
   {
     slug: 'passport-assistance',
@@ -47,6 +50,7 @@ export const services = [
     description: 'We help you complete the online passport application form and prepare your document checklist before your appointment.',
     requirements: 'Identity proof, address proof, birth proof, photographs.',
     turnaround: 'Form filing same day; appointment scheduled via official portal.',
+    image: 'https://i-media.vyaparify.com/vcards/blogs/236921/Passport-Assistance.jpg',
   },
   {
     slug: 'ration-card',
@@ -56,6 +60,7 @@ export const services = [
     description: 'Help with new ration card applications, adding or removing family members, and correcting existing details.',
     requirements: 'Family ID/address proof, Aadhaar of members.',
     turnaround: 'Same day filing.',
+    image: 'https://goemkarponn.com/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-10-at-11.05.03-AM-1.jpeg',
   },
   {
     slug: 'caste-residence-certificate',
@@ -65,6 +70,7 @@ export const services = [
     description: 'We help you fill and submit caste (jati) and residence (nivas) certificate applications with the correct supporting documents.',
     requirements: 'Identity proof, address proof, relevant caste documents.',
     turnaround: 'Same day filing.',
+    image: 'https://jobmarg.in/wp-content/uploads/2026/03/Caste-Certificate-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-%E0%A4%95%E0%A5%8C%E0%A4%A8-%E0%A4%B8%E0%A4%BE-Document-Select-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82.jpg.webp',
   },
   {
     slug: 'income-certificate',
@@ -74,6 +80,7 @@ export const services = [
     description: 'Assistance completing income certificate applications, commonly needed for scholarships, admissions and welfare schemes.',
     requirements: 'Identity proof, address proof, income-related documents if available.',
     turnaround: 'Same day filing.',
+    image: 'https://www.cigi.org/public/uploads/blog_img/jrWeoDaraz1bYgd2NHvnjr5ZlWVxOb1708882215.png',
   },
   {
     slug: 'driving-licence-form',
@@ -83,6 +90,7 @@ export const services = [
     description: 'We help you complete the online driving licence application form correctly before you visit the RTO.',
     requirements: 'Identity proof, address proof, age proof.',
     turnaround: 'Same day filing.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqp6mKLybJueM3xsycTNocJQp7SZ4Vf8WTaxu9AanBaOix-Lcfx99IzBE&s=10',
   },
 
   // ---- Pension & Welfare Schemes ----
@@ -94,6 +102,7 @@ export const services = [
     description: 'We help unorganised sector workers register on the e-Shram portal and obtain their e-Shram card.',
     requirements: 'Aadhaar card, mobile number linked to Aadhaar, bank account details.',
     turnaround: 'Same day.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFX2g7IvIETZpJevAwBjFZkpzFwoq7GARTB7uEMwGndQyHR9rAu7VE4kE&s=10',
   },
   {
     slug: 'widow-pension',
@@ -103,6 +112,7 @@ export const services = [
     description: 'Help completing the widow pension application with the correct supporting documents.',
     requirements: 'Identity proof, address proof, husband\u2019s death certificate.',
     turnaround: 'Same day filing.',
+    image: 'https://upyojana.net/wp-content/uploads/2021/09/UP-Vidhwa-Pension-Yojana-Apply-Online-%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A6%E0%A5%87%E0%A4%B6-%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%B5%E0%A4%BE-%E0%A4%AA%E0%A5%87%E0%A4%82%E0%A4%B6%E0%A4%A8-%E0%A4%AF%E0%A5%8B%E0%A4%9C%E0%A4%A8%E0%A4%BE-%E0%A4%86%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%A8-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%95%E0%A4%B0%E0%A5%87.png',
   },
   {
     slug: 'old-age-pension',
@@ -112,6 +122,7 @@ export const services = [
     description: 'Help completing old-age pension applications for eligible senior citizens.',
     requirements: 'Age proof, identity proof, address proof.',
     turnaround: 'Same day filing.',
+    image: 'https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-6m5fjvk41r13e7k4i8vf5qtbo7-20200410140021.Medi.jpeg',
   },
   {
     slug: 'disability-pension',
@@ -121,6 +132,7 @@ export const services = [
     description: 'Help completing disability pension applications along with the required medical certification.',
     requirements: 'Disability certificate, identity proof, address proof.',
     turnaround: 'Same day filing.',
+    image: 'https://prod-assets.legalkart.com/blog/featured/divyang-pension-yojana-a-complete-guide-to-benefit.jpeg',
   },
 
   // ---- Banking & Bill Payment ----
@@ -132,6 +144,7 @@ export const services = [
     description: 'Deposit or withdraw cash from your bank account using Aadhaar-based authentication — no need to visit your bank branch.',
     requirements: 'Aadhaar-linked bank account, Aadhaar number.',
     turnaround: 'Instant.',
+    image: 'https://picsum.photos/id/1/700/500',
   },
   {
     slug: 'lic-assistance',
@@ -141,6 +154,7 @@ export const services = [
     description: 'Support with LIC premium payment/deposit, withdrawal-related forms and general policy documentation.',
     requirements: 'Policy number, relevant identity documents.',
     turnaround: 'Same day.',
+    image: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202002/lic_1-770x433_0.jpeg',
   },
   {
     slug: 'electricity-bill-payment',
@@ -150,6 +164,7 @@ export const services = [
     description: 'Pay your electricity bill at the counter without needing to use an app or visit the office.',
     requirements: 'Bill/consumer number.',
     turnaround: 'Instant.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTln2jqDSPreZJ_oDe6AdrD-vmsismdWu9zix6szq715lIiDYOj6cx2o9fs&s=10',
   },
   {
     slug: 'vehicle-challan-payment',
@@ -159,6 +174,7 @@ export const services = [
     description: 'We help you look up and pay pending vehicle challans (traffic fines) online.',
     requirements: 'Vehicle number or challan number.',
     turnaround: 'Instant.',
+    image: 'https://lawyered.in/uploads/blog/icon-1786692324357-727489946-driving_licence_vehicle_registration_with_logo.png',
   },
   {
     slug: 'vehicle-insurance',
@@ -168,6 +184,7 @@ export const services = [
     description: 'Help comparing and purchasing vehicle insurance policies for two-wheelers and four-wheelers.',
     requirements: 'Vehicle RC, identity proof.',
     turnaround: 'Same day.',
+    image: 'https://tiimg.tistatic.com/fp/1/007/044/motor-vehicle-insurance-services-943.jpg',
   },
 
   // ---- Printing & Documentation ----
@@ -179,6 +196,7 @@ export const services = [
     description: 'Fast, affordable colour and black-and-white printing, photocopying, scanning and lamination for documents of all kinds.',
     requirements: 'Bring your file (USB/email) or physical document.',
     turnaround: 'While you wait.',
+    image: 'https://picsum.photos/id/60/700/500',
   },
   {
     slug: 'document-scanning',
@@ -188,6 +206,7 @@ export const services = [
     description: 'We scan physical documents and prepare them in the correct size and format required for online forms and applications.',
     requirements: 'Original documents.',
     turnaround: 'Usually same day.',
+    image: 'https://picsum.photos/id/48/700/500',
   },
   {
     slug: 'banner-poster-printing',
@@ -197,6 +216,7 @@ export const services = [
     description: 'Design and print banners and posters in various sizes for shops, events and celebrations.',
     requirements: 'Text/logo/photo content for the banner; size preference.',
     turnaround: '1–2 days.',
+    image: 'https://picsum.photos/id/1080/700/500',
   },
   {
     slug: 'cup-tshirt-printing',
@@ -206,6 +226,7 @@ export const services = [
     description: 'Personalised photo or text printing on cups and T-shirts — popular for gifts and events.',
     requirements: 'Digital photo/design file.',
     turnaround: 'Same day to 1 day.',
+    image: 'https://picsum.photos/id/96/700/500',
   },
 
   // ---- Photography ----
@@ -217,6 +238,7 @@ export const services = [
     description: 'Studio-quality passport, ID-size and urgent photographs, printed immediately in the size your application needs.',
     requirements: 'None — just visit the studio.',
     turnaround: '10–15 minutes.',
+    image: 'https://picsum.photos/id/250/700/500',
   },
   {
     slug: 'photo-printing',
@@ -226,6 +248,7 @@ export const services = [
     description: 'Send us your photos and choose from standard print sizes for albums, frames or keepsakes.',
     requirements: 'Digital photo files (USB, email, or WhatsApp).',
     turnaround: 'Same day for standard orders.',
+    image: 'https://tiimg.tistatic.com/fp/1/007/964/full-hd-format-artsy-lens-and-glamour-wedding-photography-services-275.jpg',
   },
 
   // ---- Designing & Cards ----
@@ -237,6 +260,7 @@ export const services = [
     description: 'Personalised wedding and event invitation card designs, from concept to final printed cards.',
     requirements: 'Event details and wording; reference designs if you have any.',
     turnaround: '2–4 days depending on quantity.',
+    image: 'https://image.epicinvites.in/storage/v1/object/public/product-images/1758652437854/elegant-noor-editable-nikah-muslim-wedding-invitation-card.webp',
   },
   {
     slug: 'visiting-cards',
@@ -246,6 +270,7 @@ export const services = [
     description: 'Clean, professional visiting card designs printed on quality card stock for individuals and businesses.',
     requirements: 'Name, contact details and business info.',
     turnaround: '1–2 days.',
+    image: 'https://kingofcards.in/cdn/shop/files/V6TjNofq_2.png?v=1766752311&width=1100',
   },
   {
     slug: 'wedding-decoration',
@@ -255,6 +280,7 @@ export const services = [
     description: 'Decoration for the jaimal (garland ceremony) stage and the groom\u2019s vehicle for weddings and other auspicious occasions.',
     requirements: 'Event date, venue and decoration preference.',
     turnaround: 'Booked in advance of the event date.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsl6MSuBRqck4BRFmy9h9zMCFLONXW8vZKQ1VBCSnRg&s=10',
   },
 
   // ---- Other Digital Services ----
@@ -266,6 +292,7 @@ export const services = [
     description: 'Quick prepaid mobile recharge for all major telecom operators.',
     requirements: 'Mobile number.',
     turnaround: 'Instant.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3qNpQcthOA-KSsQQn8PIWAeixD5oBHXs_zLk-Sc3XlQ&s=10',
   },
   {
     slug: 'online-form-filling',
@@ -275,6 +302,7 @@ export const services = [
     description: 'We help you complete common online forms accurately — from scholarship forms to job applications.',
     requirements: 'Relevant personal details and documents.',
     turnaround: 'Same day.',
+    image: 'https://picsum.photos/id/1/700/500',
   },
 ];
 

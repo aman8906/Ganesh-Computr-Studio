@@ -47,7 +47,7 @@ export default function ServiceDetail() {
           initial={{ scale: 1.15, opacity: 0.6 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          src={visual?.image}
+          src={service.image || visual?.image}
           alt={service.name}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -192,7 +192,7 @@ export default function ServiceDetail() {
                         className="group relative block h-32 rounded-lg overflow-hidden glow-card"
                       >
                         <img
-                          src={categoryVisuals[r.category]?.image}
+                          src={r.image || categoryVisuals[r.category]?.image}
                           alt={r.name}
                           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
@@ -246,8 +246,8 @@ export default function ServiceDetail() {
                 </Link>
 
                 {/* Call Now */}
-                <a
-                  href={`tel:${business.phone}`}
+                
+                 <a href={`tel:${business.phone}`}
                   className="btn w-full mb-3 border-2 border-primary-dark text-primary-dark bg-white hover:bg-primary-dark hover:text-white transition-colors duration-300"
                 >
                   <Phone className="h-4 w-4" />
@@ -255,8 +255,8 @@ export default function ServiceDetail() {
                 </a>
 
                 {/* WhatsApp */}
-                <a
-                  href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
+                
+                  <a href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
                     `Hi, I'd like to know more about ${service.name}`
                   )}`}
                   target="_blank"
