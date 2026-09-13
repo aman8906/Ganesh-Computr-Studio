@@ -1,24 +1,52 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import heroImage from '../assets/hero.png';
-import { Phone, MessageCircle, MapPin, Star, ShieldCheck, Zap } from 'lucide-react';
-import { services, business, categories } from '../data/services';
-import { heroReveal, heroItem, staggerGrid, gridItem } from '../animations/variants';
-import ServiceCard from '../components/sections/ServiceCard';
-import CategoryTile from '../components/sections/CategoryTile';
-import StatCounter from '../components/ui/StatCounter';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import heroImage from "../assets/hero.png";
+import {
+  Phone,
+  MessageCircle,
+  MapPin,
+  Star,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
+import { services, business, categories } from "../data/services";
+import {
+  heroReveal,
+  heroItem,
+  staggerGrid,
+  gridItem,
+} from "../animations/variants";
+import ServiceCard from "../components/sections/ServiceCard";
+import CategoryTile from "../components/sections/CategoryTile";
+import StatCounter from "../components/ui/StatCounter";
 
 const steps = [
-  { title: 'Choose a service', desc: 'Browse categories or search for what you need.', color: 'bg-marigold-light text-marigold-dark' },
-  { title: 'Submit your details', desc: 'Tell us your requirement — takes under a minute.', color: 'bg-coral-light text-coral-dark' },
-  { title: 'We process it', desc: 'Our team prepares or files your request accurately.', color: 'bg-teal-light text-teal-dark' },
-  { title: 'Collect or receive', desc: "We'll let you know the moment it's ready.", color: 'bg-primary-light text-primary' },
+  {
+    title: "Choose a service",
+    desc: "Browse categories or search for what you need.",
+    color: "bg-marigold-light text-marigold-dark",
+  },
+  {
+    title: "Submit your details",
+    desc: "Tell us your requirement — takes under a minute.",
+    color: "bg-coral-light text-coral-dark",
+  },
+  {
+    title: "We process it",
+    desc: "Our team prepares or files your request accurately.",
+    color: "bg-teal-light text-teal-dark",
+  },
+  {
+    title: "Collect or receive",
+    desc: "We'll let you know the moment it's ready.",
+    color: "bg-primary-light text-primary",
+  },
 ];
 
 const trustBadges = [
-  { icon: ShieldCheck, label: 'Trusted locally' },
-  { icon: Zap, label: 'Fast turnaround' },
-  { icon: Star, label: '4.8-star service' },
+  { icon: ShieldCheck, label: "Trusted locally" },
+  { icon: Zap, label: "Fast turnaround" },
+  { icon: Star, label: "4.8-star service" },
 ];
 
 export default function Home() {
@@ -37,22 +65,36 @@ export default function Home() {
               variants={heroItem}
               className="inline-flex items-center gap-2 text-sm font-semibold text-coral-dark bg-coral-light rounded-full px-4 py-1.5 mb-5"
             >
-              <Star className="h-3.5 w-3.5 fill-coral-dark" /> Your neighbourhood digital service center
+              <Star className="h-3.5 w-3.5 fill-coral-dark" /> Your
+              neighbourhood digital service center
             </motion.span>
-            <motion.h1 variants={heroItem} className="text-4xl md:text-5xl font-extrabold text-primary-dark leading-[1.1]">
+            <motion.h1
+              variants={heroItem}
+              className="text-4xl md:text-5xl font-extrabold text-primary-dark leading-[1.1]"
+            >
               Documents, printing &amp; studio work — sorted today.
             </motion.h1>
-            <motion.p variants={heroItem} className="mt-5 text-lg text-ink/75 max-w-xl">
-              Aadhaar &amp; PAN paperwork, online forms, printing, photography and card design —
-              handled by people you can actually walk up to and talk with.
+            <motion.p
+              variants={heroItem}
+              className="mt-5 text-lg text-ink/75 max-w-xl"
+            >
+              Aadhaar &amp; PAN paperwork, online forms, printing, photography
+              and card design — handled by people you can actually walk up to
+              and talk with.
             </motion.p>
-            <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-3">
-              <Link to="/services" className="btn-primary">View Services</Link>
+            <motion.div
+              variants={heroItem}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <Link to="/services" className="btn-primary">
+                View Services
+              </Link>
               <a href={`tel:${business.phone}`} className="btn-outline">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
-              
-                <a href={`https://wa.me/${business.whatsapp}`}
+
+              <a
+                href={`https://wa.me/${business.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp"
@@ -60,9 +102,15 @@ export default function Home() {
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
               </a>
             </motion.div>
-            <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-5">
+            <motion.div
+              variants={heroItem}
+              className="mt-8 flex flex-wrap gap-5"
+            >
               {trustBadges.map((b) => (
-                <div key={b.label} className="flex items-center gap-2 text-sm font-medium text-ink/70">
+                <div
+                  key={b.label}
+                  className="flex items-center gap-2 text-sm font-medium text-ink/70"
+                >
                   <b.icon className="h-4 w-4 text-teal-dark" /> {b.label}
                 </div>
               ))}
@@ -77,10 +125,10 @@ export default function Home() {
           >
             <div className="relative rounded-lg overflow-hidden glow-card aspect-[4/5] max-w-md mx-auto">
               <img
-  src={heroImage}
-  alt="Customer being helped with documentation at the service counter"
-  className="h-full w-full object-cover"
-/>
+                src={heroImage}
+                alt="Customer being helped with documentation at the service counter"
+                className="h-full w-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
             </div>
 
@@ -94,7 +142,9 @@ export default function Home() {
                 ✓
               </span>
               <div>
-                <p className="text-sm font-semibold text-primary-dark leading-tight">Request confirmed</p>
+                <p className="text-sm font-semibold text-primary-dark leading-tight">
+                  Request confirmed
+                </p>
                 <p className="text-xs text-muted">Usually same-day</p>
               </div>
             </motion.div>
@@ -106,8 +156,12 @@ export default function Home() {
       <section className="container-page py-16 md:py-20">
         <div className="flex items-end justify-between mb-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">Explore by Category</h2>
-            <p className="text-muted mt-1">{categories.length} ways we help — pick what you need.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">
+              Explore by Category
+            </h2>
+            <p className="text-muted mt-1">
+              {categories.length} ways we help — pick what you need.
+            </p>
           </div>
         </div>
         <motion.div
@@ -128,10 +182,17 @@ export default function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">Popular Services</h2>
-              <p className="text-muted mt-1">The services our customers ask for most.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-dark">
+                Popular Services
+              </h2>
+              <p className="text-muted mt-1">
+                The services our customers ask for most.
+              </p>
             </div>
-            <Link to="/services" className="hidden sm:inline-flex text-coral-dark font-semibold text-sm">
+            <Link
+              to="/services"
+              className="hidden sm:inline-flex text-coral-dark font-semibold text-sm"
+            >
               See all services →
             </Link>
           </div>
@@ -151,14 +212,20 @@ export default function Home() {
 
       {/* How it works */}
       <section className="container-page py-16 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary-dark mb-10">How It Works</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-primary-dark mb-10">
+          How It Works
+        </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, i) => (
             <div key={step.title} className="relative">
-              <div className={`flex h-11 w-11 items-center justify-center rounded-lg font-bold mb-4 ${step.color}`}>
+              <div
+                className={`flex h-11 w-11 items-center justify-center rounded-lg font-bold mb-4 ${step.color}`}
+              >
                 {i + 1}
               </div>
-              <h3 className="font-semibold text-primary-dark mb-1">{step.title}</h3>
+              <h3 className="font-semibold text-primary-dark mb-1">
+                {step.title}
+              </h3>
               <p className="text-muted text-[15px]">{step.desc}</p>
             </div>
           ))}
@@ -170,7 +237,11 @@ export default function Home() {
         <div className="container-page grid grid-cols-2 sm:grid-cols-4 gap-8">
           <StatCounter to={12} suffix="+" label="Years serving locally" />
           <StatCounter to={5000} suffix="+" label="Requests completed" />
-          <StatCounter to={services.length} suffix="+" label="Services offered" />
+          <StatCounter
+            to={services.length}
+            suffix="+"
+            label="Services offered"
+          />
           <StatCounter to={98} suffix="%" label="Customers who return" />
         </div>
       </section>
@@ -178,13 +249,15 @@ export default function Home() {
       {/* Trust + Location */}
       <section className="container-page py-16 md:py-20 grid lg:grid-cols-2 gap-10">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-primary-dark mb-4">Why customers choose us</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-dark mb-4">
+            Why customers choose us
+          </h2>
           <ul className="space-y-4">
             {[
-              'Clear, honest guidance — we tell you exactly what to bring.',
-              'Fast turnaround on printing, photos and card designs.',
-              'We explain assistance vs. official issuance so there is never confusion.',
-              'A team that has served this neighbourhood for years.',
+              "Clear, honest guidance — we tell you exactly what to bring.",
+              "Fast turnaround on printing, photos and card designs.",
+              "We explain assistance vs. official issuance so there is never confusion.",
+              "A team that has served this neighbourhood for years.",
             ].map((point) => (
               <li key={point} className="flex gap-3 text-[15px] text-ink/85">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-coral shrink-0" />
@@ -205,7 +278,12 @@ export default function Home() {
               <MapPin className="h-5 w-5 mt-0.5 shrink-0" />
               <p className="text-[15px]">{business.address}</p>
             </div>
-            <a href={business.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-primary w-fit">
+            <a
+              href={business.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-fit"
+            >
               Get Directions
             </a>
           </div>

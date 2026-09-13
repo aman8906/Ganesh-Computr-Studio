@@ -2,6 +2,7 @@ import Enquiry from '../models/Enquiry.js';
 import Service from '../models/Service.js';
 import AuditLog from '../models/AuditLog.js';
 import { generateRequestId } from '../utils/requestId.js';
+import { notifyNewEnquiry } from '../utils/notify.js';
 
 // POST /api/v1/enquiries — SRS FR-ENQ-02: create only after all validation passes.
 export async function createEnquiry(req, res, next) {
@@ -46,6 +47,12 @@ export async function createEnquiry(req, res, next) {
       status: 'New', // BR-03
       ip: req.ip,
     });
+
+    // Fire email/SMS/WhatsApp notifications in the background — never awaited,
+    // so a slow or failed notification never delays or fails the customer's
+    // success response (Architecture doc: notifications must not block the
+    // core request transaction).
+    notifyNewEnquiry(enquiry);
 
     res.status(201).json({
       data: {

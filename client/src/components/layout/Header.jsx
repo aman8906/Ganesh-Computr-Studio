@@ -1,20 +1,10 @@
-
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Menu,
-  X,
-  Phone,
-  MessageCircle,
-  Sparkles,
-} from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Sparkles } from "lucide-react";
 
 import { business } from "../../data/services";
-import {
-  drawerVariants,
-  overlayVariants,
-} from "../../animations/variants";
+import { drawerVariants, overlayVariants } from "../../animations/variants";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -62,7 +52,6 @@ export default function Header() {
         }`}
       >
         <div className="container-page flex items-center justify-between min-h-[76px]">
-          
           {/* ================= LOGO ================= */}
           <Link
             to="/"
@@ -88,9 +77,7 @@ export default function Header() {
             <span className="font-bold text-primary-dark leading-tight text-[15px] hidden sm:block">
               Shri Ganesh
               <br />
-              <span className="font-semibold">
-                Computer &amp; Studio
-              </span>
+              <span className="font-semibold">Computer &amp; Studio</span>
             </span>
           </Link>
 
@@ -126,18 +113,12 @@ export default function Header() {
 
           {/* ================= DESKTOP ACTIONS ================= */}
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={`tel:${business.phone}`}
-              className="btn-outline"
-            >
+            <a href={`tel:${business.phone}`} className="btn-outline">
               <Phone className="h-4 w-4" />
               Call Now
             </a>
 
-            <Link
-              to="/request-service"
-              className="btn-primary"
-            >
+            <Link to="/request-service" className="btn-primary">
               <Sparkles className="h-4 w-4" />
               Request Service
             </Link>
@@ -192,9 +173,7 @@ export default function Header() {
                       />
                     </div>
 
-                    <span className="font-bold text-primary-dark">
-                      Menu
-                    </span>
+                    <span className="font-bold text-primary-dark">Menu</span>
                   </div>
 
                   <motion.button
@@ -265,4 +244,3 @@ export default function Header() {
     </>
   );
 }
-

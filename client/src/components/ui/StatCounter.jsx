@@ -1,10 +1,16 @@
-import { useEffect, useId, useRef, useState } from 'react';
-import { motion, useInView, animate } from 'framer-motion';
+import { useEffect, useId, useRef, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 
 const RADIUS = 34;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
-export default function StatCounter({ to, suffix = '', label, icon: Icon, progressMax }) {
+export default function StatCounter({
+  to,
+  suffix = "",
+  label,
+  icon: Icon,
+  progressMax,
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.6 });
   const [value, setValue] = useState(0);
@@ -17,7 +23,7 @@ export default function StatCounter({ to, suffix = '', label, icon: Icon, progre
     if (!isInView) return;
     const controls = animate(0, to, {
       duration: 1.6,
-      ease: 'easeOut',
+      ease: "easeOut",
       onUpdate: (v) => {
         setValue(Math.floor(v));
         setProgress(Math.min(v / max, 1));

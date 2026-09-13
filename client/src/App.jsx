@@ -1,15 +1,15 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Layout from './components/layout/Layout';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import ServiceDetail from './pages/ServiceDetail';
-import PrintingStudio from './pages/PrintingStudio';
-import Gallery from './pages/Gallery';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import RequestService from './pages/RequestService';
-import NotFound from './pages/NotFound';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import PrintingStudio from "./pages/PrintingStudio";
+import Gallery from "./pages/Gallery";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import RequestService from "./pages/RequestService";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const location = useLocation();

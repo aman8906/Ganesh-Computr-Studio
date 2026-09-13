@@ -1,31 +1,36 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { MessageSquare, Shield, Users, Award, ArrowRight } from 'lucide-react';
-import { business, services } from '../data/services';
-import { heroReveal, heroItem, staggerGrid, gridItem } from '../animations/variants';
-import StatCounter from '../components/ui/StatCounter';
-import studioImage from '../assets/studio.jpg';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { MessageSquare, Shield, Users, Award, ArrowRight } from "lucide-react";
+import { business, services } from "../data/services";
+import {
+  heroReveal,
+  heroItem,
+  staggerGrid,
+  gridItem,
+} from "../animations/variants";
+import StatCounter from "../components/ui/StatCounter";
+import studioImage from "../assets/studio.jpg";
 const values = [
   {
     icon: MessageSquare,
-    title: 'Clear communication',
+    title: "Clear communication",
     desc: "We tell you exactly what a service does — and doesn't — cover.",
-    bg: 'bg-marigold-light',
-    text: 'text-marigold-dark',
+    bg: "bg-marigold-light",
+    text: "text-marigold-dark",
   },
   {
     icon: Shield,
-    title: 'Minimum data collected',
+    title: "Minimum data collected",
     desc: "We only ever ask for what's needed to help you, nothing more.",
-    bg: 'bg-teal-light',
-    text: 'text-teal-dark',
+    bg: "bg-teal-light",
+    text: "text-teal-dark",
   },
   {
     icon: Users,
-    title: 'Neighbourhood trust',
-    desc: 'Built over years of serving the same families and local businesses.',
-    bg: 'bg-coral-light',
-    text: 'text-coral-dark',
+    title: "Neighbourhood trust",
+    desc: "Built over years of serving the same families and local businesses.",
+    bg: "bg-coral-light",
+    text: "text-coral-dark",
   },
 ];
 
@@ -44,10 +49,16 @@ export default function About() {
           >
             <Award className="h-3.5 w-3.5" /> About Us
           </motion.span>
-          <motion.h1 variants={heroItem} className="text-3xl md:text-4xl font-extrabold text-primary-dark leading-tight">
+          <motion.h1
+            variants={heroItem}
+            className="text-3xl md:text-4xl font-extrabold text-primary-dark leading-tight"
+          >
             About {business.name}
           </motion.h1>
-          <motion.p variants={heroItem} className="text-lg text-ink/80 mt-4 leading-relaxed">
+          <motion.p
+            variants={heroItem}
+            className="text-lg text-ink/80 mt-4 leading-relaxed"
+          >
             {business.description}
           </motion.p>
           <motion.div variants={heroItem} className="mt-6">
@@ -56,20 +67,20 @@ export default function About() {
         </motion.div>
 
         <motion.div
-  initial={{ opacity: 0, scale: 0.94 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6, delay: 0.1 }}
-  className="glow-card relative overflow-hidden rounded-2xl aspect-video lg:aspect-[4/3] ring-1 ring-black/5 shadow-xl"
->
-  <img
-    src={studioImage}
-    alt="Inside Shri Ganesh Computer & Studio"
-    className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-</motion.div>
-  </div>
-         
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="glow-card relative overflow-hidden rounded-2xl aspect-video lg:aspect-[4/3] ring-1 ring-black/5 shadow-xl"
+        >
+          <img
+            src={studioImage}
+            alt="Inside Shri Ganesh Computer & Studio"
+            className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        </motion.div>
+      </div>
+
       {/* Value cards */}
       <div className="container-page py-4">
         <motion.div
@@ -86,10 +97,14 @@ export default function About() {
               whileHover={{ y: -6 }}
               className="card p-6"
             >
-              <span className={`flex h-11 w-11 items-center justify-center rounded-full ${v.bg} ${v.text} mb-4`}>
+              <span
+                className={`flex h-11 w-11 items-center justify-center rounded-full ${v.bg} ${v.text} mb-4`}
+              >
                 <v.icon className="h-5 w-5" />
               </span>
-              <h3 className="font-semibold text-primary-dark mb-2">{v.title}</h3>
+              <h3 className="font-semibold text-primary-dark mb-2">
+                {v.title}
+              </h3>
               <p className="text-muted text-[15px] leading-relaxed">{v.desc}</p>
             </motion.div>
           ))}
@@ -101,7 +116,11 @@ export default function About() {
         <div className="container-page grid grid-cols-2 sm:grid-cols-4 gap-8">
           <StatCounter to={12} suffix="+" label="Years serving locally" />
           <StatCounter to={5000} suffix="+" label="Requests completed" />
-          <StatCounter to={services.length} suffix="+" label="Services offered" />
+          <StatCounter
+            to={services.length}
+            suffix="+"
+            label="Services offered"
+          />
           <StatCounter to={98} suffix="%" label="Customers who return" />
         </div>
       </div>
@@ -116,12 +135,17 @@ export default function About() {
           className="glow-card bg-white p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6"
         >
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-primary-dark text-xl">Have something you need help with?</h3>
-            <p className="text-muted mt-1">We're happy to explain what to bring before you visit.</p>
+            <h3 className="font-semibold text-primary-dark text-xl">
+              Have something you need help with?
+            </h3>
+            <p className="text-muted mt-1">
+              We're happy to explain what to bring before you visit.
+            </p>
           </div>
           <Link to="/request-service" className="btn-primary shrink-0 group">
             <span className="flex items-center gap-2">
-              Request Service <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Request Service{" "}
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
         </motion.div>

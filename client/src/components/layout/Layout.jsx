@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Header from './Header';
-import Footer from './Footer';
-import { pageTransition } from '../../animations/variants';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import Header from "./Header";
+import Footer from "./Footer";
+import { pageTransition } from "../../animations/variants";
 
 export default function Layout({ children }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return (

@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Loader2 } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Loader2 } from "lucide-react";
 
 const variants = {
-  primary: 'btn-primary',
-  outline: 'btn-outline',
-  whatsapp: 'btn-whatsapp',
-  ghost: 'btn-ghost',
-  gradient: 'btn-primary', // gradient IS the primary style in this theme — alias kept for readability
+  primary: "btn-primary",
+  outline: "btn-outline",
+  whatsapp: "btn-whatsapp",
+  ghost: "btn-ghost",
+  gradient: "btn-primary", // gradient IS the primary style in this theme — alias kept for readability
 };
 
 let rippleId = 0;
 
 export default function Button({
-  as = 'button',
+  as = "button",
   href,
-  variant = 'primary',
+  variant = "primary",
   loading = false,
   icon: Icon,
-  iconPosition = 'left',
+  iconPosition = "left",
   children,
-  className = '',
+  className = "",
   ...props
 }) {
   const [ripples, setRipples] = useState([]);
   const classes = `${variants[variant]} relative overflow-hidden ${className}`;
-  const Tag = as === 'a' ? motion.a : motion.button;
+  const Tag = as === "a" ? motion.a : motion.button;
 
   const handleClick = (e) => {
     // Spawn a ripple at the click position, then clean it up after the animation ends.
@@ -67,16 +67,16 @@ export default function Button({
           key={r.id}
           initial={{ scale: 0, opacity: 0.5 }}
           animate={{ scale: 1, opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="absolute rounded-full bg-white/40 pointer-events-none"
           style={{ width: r.size, height: r.size, left: r.x, top: r.y }}
         />
       ))}
 
       <span className="relative z-10 flex items-center gap-2">
-        {iconPosition === 'left' && iconEl}
+        {iconPosition === "left" && iconEl}
         {children}
-        {iconPosition === 'right' && iconEl}
+        {iconPosition === "right" && iconEl}
       </span>
     </Tag>
   );

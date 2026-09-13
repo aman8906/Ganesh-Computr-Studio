@@ -1,48 +1,38 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import {
-  Phone,
-  MessageCircle,
-  MapPin,
-  Clock,
-} from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
 
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-} from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 
-import { business, categories } from '../../data/services';
-import { staggerGrid, gridItem } from '../../animations/variants';
+import { business, categories } from "../../data/services";
+import { staggerGrid, gridItem } from "../../animations/variants";
 
 const socialLinks = [
   {
     icon: FaFacebookF,
-    href: 'https://facebook.com',
-    label: 'Facebook',
-    hover: 'hover:bg-[#1877F2]',
+    href: "https://facebook.com",
+    label: "Facebook",
+    hover: "hover:bg-[#1877F2]",
   },
   {
     icon: FaInstagram,
-    href: 'https://instagram.com',
-    label: 'Instagram',
+    href: "https://instagram.com",
+    label: "Instagram",
     hover:
-      'hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF]',
+      "hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF]",
   },
   {
     icon: FaYoutube,
-    href: 'https://youtube.com',
-    label: 'YouTube',
-    hover: 'hover:bg-[#FF0000]',
+    href: "https://youtube.com",
+    label: "YouTube",
+    hover: "hover:bg-[#FF0000]",
   },
   {
     icon: FaTwitter,
-    href: 'https://twitter.com',
-    label: 'Twitter / X',
-    hover: 'hover:bg-black',
+    href: "https://twitter.com",
+    label: "Twitter / X",
+    hover: "hover:bg-black",
   },
 ];
 
@@ -78,8 +68,8 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-white/70 leading-relaxed mb-5">
-            Documentation assistance, printing, photography and card
-            designing — done right, close to home.
+            Documentation assistance, printing, photography and card designing —
+            done right, close to home.
           </p>
 
           {/* Social Media */}
@@ -107,9 +97,7 @@ export default function Footer() {
 
         {/* Services */}
         <motion.div variants={gridItem}>
-          <h4 className="font-semibold mb-3 text-marigold">
-            Services
-          </h4>
+          <h4 className="font-semibold mb-3 text-marigold">Services</h4>
 
           <ul className="space-y-2 text-sm text-white/70">
             {categories.slice(0, 5).map((c) => (
@@ -127,9 +115,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <motion.div variants={gridItem}>
-          <h4 className="font-semibold mb-3 text-coral">
-            Quick Links
-          </h4>
+          <h4 className="font-semibold mb-3 text-coral">Quick Links</h4>
 
           <ul className="space-y-2 text-sm text-white/70">
             <li>
@@ -172,9 +158,7 @@ export default function Footer() {
 
         {/* Reach Us */}
         <motion.div variants={gridItem}>
-          <h4 className="font-semibold mb-3 text-teal">
-            Reach Us
-          </h4>
+          <h4 className="font-semibold mb-3 text-teal">Reach Us</h4>
 
           <ul className="space-y-3 text-sm text-white/70">
             {/* Phone */}
@@ -213,9 +197,7 @@ export default function Footer() {
                 <MapPin className="h-3.5 w-3.5" />
               </span>
 
-              <span className="pt-1">
-                {business.address}
-              </span>
+              <span className="pt-1">{business.address}</span>
             </li>
 
             {/* Working Hours */}
@@ -224,9 +206,7 @@ export default function Footer() {
                 <Clock className="h-3.5 w-3.5" />
               </span>
 
-              <span className="pt-1">
-                {business.workingHours}
-              </span>
+              <span className="pt-1">{business.workingHours}</span>
             </li>
           </ul>
         </motion.div>
@@ -236,8 +216,8 @@ export default function Footer() {
       <div className="relative border-t border-white/10 py-5">
         <div className="container-page flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-white/50">
           <span>
-            © {new Date().getFullYear()} Shri Ganesh Computer &amp; Studio.
-            All rights reserved.
+            © {new Date().getFullYear()} Shri Ganesh Computer &amp; Studio. All
+            rights reserved.
           </span>
 
           <span className="text-center">

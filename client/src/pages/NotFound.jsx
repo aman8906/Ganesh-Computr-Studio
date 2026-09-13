@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { SearchX, Home as HomeIcon, LayoutGrid } from 'lucide-react';
-import { heroReveal, heroItem, bounceIn } from '../animations/variants';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { SearchX, Home as HomeIcon, LayoutGrid } from "lucide-react";
+import { heroReveal, heroItem, bounceIn } from "../animations/variants";
 
 export default function NotFound() {
   return (
@@ -20,17 +20,27 @@ export default function NotFound() {
         </motion.div>
 
         <motion.div variants={heroReveal} initial="hidden" animate="show">
-          <motion.p variants={heroItem} className="text-sm font-bold tracking-widest text-coral-dark">
+          <motion.p
+            variants={heroItem}
+            className="text-sm font-bold tracking-widest text-coral-dark"
+          >
             404
           </motion.p>
-          <motion.h1 variants={heroItem} className="text-3xl md:text-4xl font-extrabold text-primary-dark mt-2">
+          <motion.h1
+            variants={heroItem}
+            className="text-3xl md:text-4xl font-extrabold text-primary-dark mt-2"
+          >
             Page not found
           </motion.h1>
           <motion.p variants={heroItem} className="text-muted mt-3">
-            The page you're looking for doesn't exist or has moved. Let's get you back on track.
+            The page you're looking for doesn't exist or has moved. Let's get
+            you back on track.
           </motion.p>
 
-          <motion.div variants={heroItem} className="flex flex-wrap justify-center gap-3 mt-8">
+          <motion.div
+            variants={heroItem}
+            className="flex flex-wrap justify-center gap-3 mt-8"
+          >
             <Link to="/" className="btn-primary">
               <HomeIcon className="h-4 w-4" /> Go Home
             </Link>

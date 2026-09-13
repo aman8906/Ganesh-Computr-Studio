@@ -1,5 +1,5 @@
-import { Link, useParams, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link, useParams, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Phone,
   MessageCircle,
@@ -8,10 +8,10 @@ import {
   AlertCircle,
   ArrowRight,
   Sparkles,
-} from 'lucide-react';
-import { services, categories, business } from '../data/services';
-import { categoryVisuals } from '../data/categoryImages';
-import { heroReveal, heroItem } from '../animations/variants';
+} from "lucide-react";
+import { services, categories, business } from "../data/services";
+import { categoryVisuals } from "../data/categoryImages";
+import { heroReveal, heroItem } from "../animations/variants";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -26,14 +26,10 @@ export default function ServiceDetail() {
   const visual = categoryVisuals[service.category];
 
   const related = services
-    .filter(
-      (s) =>
-        s.category === service.category &&
-        s.slug !== service.slug
-    )
+    .filter((s) => s.category === service.category && s.slug !== service.slug)
     .slice(0, 3);
 
-  const isGovtService = service.category === 'govt-documentation';
+  const isGovtService = service.category === "govt-documentation";
 
   return (
     <div className="relative overflow-hidden">
@@ -46,7 +42,7 @@ export default function ServiceDetail() {
         <motion.img
           initial={{ scale: 1.15, opacity: 0.6 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           src={service.image || visual?.image}
           alt={service.name}
           className="absolute inset-0 h-full w-full object-cover"
@@ -62,10 +58,7 @@ export default function ServiceDetail() {
             transition={{ delay: 0.3 }}
             className="text-sm text-white/80 mb-2"
           >
-            <Link
-              to="/services"
-              className="hover:text-white transition-colors"
-            >
+            <Link to="/services" className="hover:text-white transition-colors">
               Services
             </Link>
 
@@ -89,7 +82,6 @@ export default function ServiceDetail() {
       {/* Main Content */}
       <div className="container-page relative py-12">
         <div className="grid lg:grid-cols-3 gap-10">
-
           {/* Left Content */}
           <motion.div
             variants={heroReveal}
@@ -164,18 +156,13 @@ export default function ServiceDetail() {
                   </h3>
                 </div>
 
-                <p className="text-[15px] text-ink/80">
-                  {service.turnaround}
-                </p>
+                <p className="text-[15px] text-ink/80">{service.turnaround}</p>
               </motion.div>
             </motion.div>
 
             {/* Related Services */}
             {related.length > 0 && (
-              <motion.div
-                variants={heroItem}
-                className="mt-12"
-              >
+              <motion.div variants={heroItem} className="mt-12">
                 <h3 className="font-semibold text-primary-dark mb-4 flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-coral-dark" />
                   Related services
@@ -183,10 +170,7 @@ export default function ServiceDetail() {
 
                 <div className="grid sm:grid-cols-3 gap-4">
                   {related.map((r) => (
-                    <motion.div
-                      key={r.slug}
-                      whileHover={{ y: -4 }}
-                    >
+                    <motion.div key={r.slug} whileHover={{ y: -4 }}>
                       <Link
                         to={`/services/${r.slug}`}
                         className="group relative block h-32 rounded-lg overflow-hidden glow-card"
@@ -224,7 +208,6 @@ export default function ServiceDetail() {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <div className="glow-card sticky top-24 bg-white">
-
               {/* Gradient Top Border */}
               <div className="h-2 bg-gradient-to-r from-marigold via-coral to-teal" />
 
@@ -240,14 +223,14 @@ export default function ServiceDetail() {
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Request Service
-
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
 
                 {/* Call Now */}
-                
-                 <a href={`tel:${business.phone}`}
+
+                <a
+                  href={`tel:${business.phone}`}
                   className="btn w-full mb-3 border-2 border-primary-dark text-primary-dark bg-white hover:bg-primary-dark hover:text-white transition-colors duration-300"
                 >
                   <Phone className="h-4 w-4" />
@@ -255,9 +238,10 @@ export default function ServiceDetail() {
                 </a>
 
                 {/* WhatsApp */}
-                
-                  <a href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
-                    `Hi, I'd like to know more about ${service.name}`
+
+                <a
+                  href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
+                    `Hi, I'd like to know more about ${service.name}`,
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -275,7 +259,6 @@ export default function ServiceDetail() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </div>

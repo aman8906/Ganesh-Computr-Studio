@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Phone,
   MessageCircle,
@@ -7,32 +7,32 @@ import {
   Clock,
   User,
   ArrowUpRight,
-} from 'lucide-react';
-import { business } from '../data/services';
-import { heroReveal, heroItem } from '../animations/variants';
+} from "lucide-react";
+import { business } from "../data/services";
+import { heroReveal, heroItem } from "../animations/variants";
 
 const contactCards = [
   {
-    key: 'call',
+    key: "call",
     icon: Phone,
-    title: 'Call us',
+    title: "Call us",
     value: business.phoneDisplay,
     href: `tel:${business.phone}`,
     external: false,
-    bg: 'bg-primary-light',
-    text: 'text-primary',
+    bg: "bg-primary-light",
+    text: "text-primary",
   },
   {
-    key: 'whatsapp',
+    key: "whatsapp",
     icon: MessageCircle,
-    title: 'WhatsApp',
-    value: 'Message us anytime',
+    title: "WhatsApp",
+    value: "Message us anytime",
     href: `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
-      'Hi, I would like to know more about your services.'
+      "Hi, I would like to know more about your services.",
     )}`,
     external: true,
-    bg: 'bg-[#25D366]/10',
-    text: 'text-[#25D366]',
+    bg: "bg-[#25D366]/10",
+    text: "text-[#25D366]",
   },
 ];
 
@@ -84,8 +84,8 @@ export default function Contact() {
                 key={c.key}
                 variants={heroItem}
                 href={c.href}
-                target={c.external ? '_blank' : undefined}
-                rel={c.external ? 'noopener noreferrer' : undefined}
+                target={c.external ? "_blank" : undefined}
+                rel={c.external ? "noopener noreferrer" : undefined}
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
                 className="card p-5 flex items-center gap-4 hover:shadow-raised hover:border-marigold/40 transition-all group"
@@ -97,9 +97,7 @@ export default function Contact() {
                 </span>
 
                 <div className="flex-1">
-                  <p className="font-semibold text-primary-dark">
-                    {c.title}
-                  </p>
+                  <p className="font-semibold text-primary-dark">{c.title}</p>
                   <p className="text-muted text-sm">{c.value}</p>
                 </div>
 
@@ -120,9 +118,7 @@ export default function Contact() {
               <div>
                 <p className="font-semibold text-primary-dark">Visit us</p>
                 <p className="text-muted text-sm">{business.address}</p>
-                <p className="text-muted text-sm">
-                  {business.addressHindi}
-                </p>
+                <p className="text-muted text-sm">{business.addressHindi}</p>
               </div>
             </motion.div>
 
@@ -137,12 +133,8 @@ export default function Contact() {
               </span>
 
               <div>
-                <p className="font-semibold text-primary-dark">
-                  Working hours
-                </p>
-                <p className="text-muted text-sm">
-                  {business.workingHours}
-                </p>
+                <p className="font-semibold text-primary-dark">Working hours</p>
+                <p className="text-muted text-sm">{business.workingHours}</p>
               </div>
             </motion.div>
 
@@ -157,21 +149,14 @@ export default function Contact() {
               </span>
 
               <div>
-                <p className="font-semibold text-primary-dark">
-                  Proprietor
-                </p>
-                <p className="text-muted text-sm">
-                  {business.proprietor}
-                </p>
+                <p className="font-semibold text-primary-dark">Proprietor</p>
+                <p className="text-muted text-sm">{business.proprietor}</p>
               </div>
             </motion.div>
 
             {/* Enquiry Button */}
             <motion.div variants={heroItem}>
-              <Link
-                to="/request-service"
-                className="btn-primary w-full mt-2"
-              >
+              <Link to="/request-service" className="btn-primary w-full mt-2">
                 Submit an Enquiry Instead
               </Link>
             </motion.div>
@@ -187,15 +172,16 @@ export default function Contact() {
             <iframe
               title="Shri Ganesh Computer & Studio location"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                'Mavai Chauraha, Chhivlaha Road, Fatehpur, Uttar Pradesh'
+                "Mavai Chauraha, Chhivlaha Road, Fatehpur, Uttar Pradesh",
               )}&z=15&output=embed`}
               className="w-full flex-1 min-h-[350px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
             {/* Google Maps Link */}
-            
-             <a href={business.mapUrl}
+
+            <a
+              href={business.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between bg-white p-4 border-t border-border hover:bg-primary-light transition-colors"

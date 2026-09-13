@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { useSearchParams, Link } from "react-router-dom";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2,
   Copy,
@@ -10,28 +10,23 @@ import {
   MessageCircle,
   ClipboardList,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { services, business } from '../data/services';
-import { enquirySchema } from '../lib/validation';
-import { submitEnquiry } from '../lib/api';
-import {
-  Field,
-  Input,
-  Select,
-  Textarea,
-} from '../components/ui/FormFields';
-import Button from '../components/ui/Button';
-import { heroReveal, heroItem } from '../animations/variants';
+import { services, business } from "../data/services";
+import { enquirySchema } from "../lib/validation";
+import { submitEnquiry } from "../lib/api";
+import { Field, Input, Select, Textarea } from "../components/ui/FormFields";
+import Button from "../components/ui/Button";
+import { heroReveal, heroItem } from "../animations/variants";
 
 export default function RequestService() {
   const [params] = useSearchParams();
-  const preselected = params.get('service') || '';
+  const preselected = params.get("service") || "";
 
-  const [submitState, setSubmitState] = useState('idle');
+  const [submitState, setSubmitState] = useState("idle");
   const [requestId, setRequestId] = useState(null);
   const [copied, setCopied] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -43,26 +38,24 @@ export default function RequestService() {
   } = useForm({
     resolver: zodResolver(enquirySchema),
     defaultValues: {
-      name: '',
-      phone: '',
+      name: "",
+      phone: "",
       service: preselected,
-      message: '',
+      message: "",
     },
   });
 
-  const watchedName = watch('name');
-  const watchedPhone = watch('phone');
-  const watchedService = watch('service');
+  const watchedName = watch("name");
+  const watchedPhone = watch("phone");
+  const watchedService = watch("service");
 
-  const filledCount = [
-    watchedName,
-    watchedPhone,
-    watchedService,
-  ].filter(Boolean).length;
+  const filledCount = [watchedName, watchedPhone, watchedService].filter(
+    Boolean,
+  ).length;
 
   const onSubmit = async (data) => {
-    setSubmitState('submitting');
-    setErrorMessage('');
+    setSubmitState("submitting");
+    setErrorMessage("");
 
     try {
       // ---- REAL API CALL — backend is live ----
@@ -74,17 +67,20 @@ export default function RequestService() {
         response?.data?.id;
 
       if (!generatedRequestId) {
-        throw new Error('Request ID was not returned by the server.');
+        throw new Error("Request ID was not returned by the server.");
       }
 
       setRequestId(generatedRequestId);
-      setSubmitState('success');
+      setSubmitState("success");
       reset();
     } catch (error) {
-      console.error('Enquiry submission failed:', error);
+      console.error("Enquiry submission failed:", error);
       const apiMessage = error?.response?.data?.error?.message;
-      setErrorMessage(apiMessage || 'Something went wrong. Please try again, or call us directly.');
-      setSubmitState('error');
+      setErrorMessage(
+        apiMessage ||
+          "Something went wrong. Please try again, or call us directly.",
+      );
+      setSubmitState("error");
     }
   };
 
@@ -99,11 +95,11 @@ export default function RequestService() {
         setCopied(false);
       }, 1500);
     } catch (error) {
-      console.error('Failed to copy request ID:', error);
+      console.error("Failed to copy request ID:", error);
     }
   };
 
-  if (submitState === 'success') {
+  if (submitState === "success") {
     return (
       <div className="relative overflow-hidden min-h-[80vh] flex items-center">
         <div className="absolute top-20 -right-20 h-72 w-72 rounded-full bg-marigold/20 blur-3xl pointer-events-none" />
@@ -123,7 +119,7 @@ export default function RequestService() {
               rotate: 0,
             }}
             transition={{
-              type: 'spring',
+              type: "spring",
               stiffness: 260,
               damping: 18,
             }}
@@ -174,7 +170,7 @@ export default function RequestService() {
               className="btn-outline h-10 px-3.5"
             >
               <Copy className="h-4 w-4" />
-              {copied ? 'Copied!' : 'Copy'}
+              {copied ? "Copied!" : "Copy"}
             </button>
           </motion.div>
 
@@ -184,17 +180,14 @@ export default function RequestService() {
             transition={{ delay: 0.55 }}
             className="flex flex-col sm:flex-row gap-3 mt-8 justify-center"
           >
-            
-              <a href={`tel:${business.phone}`}
-              className="btn-outline"
-            >
+            <a href={`tel:${business.phone}`} className="btn-outline">
               <Phone className="h-4 w-4" />
               Call us if urgent
             </a>
 
-            
-              <a href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
-                `Hi, my request ID is ${requestId}`
+            <a
+              href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
+                `Hi, my request ID is ${requestId}`,
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -220,11 +213,7 @@ export default function RequestService() {
       <div className="absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-teal/15 blur-3xl pointer-events-none" />
 
       <div className="container-page relative py-14 max-w-xl mx-auto">
-        <motion.div
-          variants={heroReveal}
-          initial="hidden"
-          animate="show"
-        >
+        <motion.div variants={heroReveal} initial="hidden" animate="show">
           <motion.span
             variants={heroItem}
             className="inline-flex items-center gap-2 text-sm font-semibold text-coral-dark bg-coral-light rounded-full px-4 py-1.5 mb-4"
@@ -240,10 +229,7 @@ export default function RequestService() {
             Request a Service
           </motion.h1>
 
-          <motion.p
-            variants={heroItem}
-            className="text-muted mt-2 mb-6"
-          >
+          <motion.p variants={heroItem} className="text-muted mt-2 mb-6">
             Share a few details and our team will reach out to help. Fields
             marked with * are required.
           </motion.p>
@@ -257,8 +243,8 @@ export default function RequestService() {
                 key={i}
                 className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
                   i < filledCount
-                    ? 'bg-gradient-to-r from-marigold to-coral'
-                    : 'bg-border'
+                    ? "bg-gradient-to-r from-marigold to-coral"
+                    : "bg-border"
                 }`}
               />
             ))}
@@ -289,7 +275,7 @@ export default function RequestService() {
                 id="name"
                 placeholder="e.g. Ramesh Patil"
                 error={errors.name}
-                {...register('name')}
+                {...register("name")}
               />
             </Field>
 
@@ -306,7 +292,7 @@ export default function RequestService() {
                 maxLength={10}
                 placeholder="10-digit mobile number"
                 error={errors.phone}
-                {...register('phone')}
+                {...register("phone")}
               />
             </Field>
 
@@ -320,18 +306,11 @@ export default function RequestService() {
                 name="service"
                 control={control}
                 render={({ field }) => (
-                  <Select
-                    id="service"
-                    error={errors.service}
-                    {...field}
-                  >
+                  <Select id="service" error={errors.service} {...field}>
                     <option value="">Select a service</option>
 
                     {services.map((service) => (
-                      <option
-                        key={service.slug}
-                        value={service.slug}
-                      >
+                      <option key={service.slug} value={service.slug}>
                         {service.name}
                       </option>
                     ))}
@@ -352,12 +331,12 @@ export default function RequestService() {
                 id="message"
                 placeholder="Tell us what you need..."
                 error={errors.message}
-                {...register('message')}
+                {...register("message")}
               />
             </Field>
 
             <AnimatePresence>
-              {submitState === 'error' && (
+              {submitState === "error" && (
                 <motion.p
                   initial={{
                     opacity: 0,
@@ -365,7 +344,7 @@ export default function RequestService() {
                   }}
                   animate={{
                     opacity: 1,
-                    height: 'auto',
+                    height: "auto",
                   }}
                   exit={{
                     opacity: 0,
@@ -381,13 +360,13 @@ export default function RequestService() {
             <Button
               type="submit"
               variant="primary"
-              loading={submitState === 'submitting'}
-              disabled={submitState === 'submitting'}
+              loading={submitState === "submitting"}
+              disabled={submitState === "submitting"}
               className="w-full"
             >
-              {submitState === 'submitting'
-                ? 'Submitting...'
-                : 'Submit Request'}
+              {submitState === "submitting"
+                ? "Submitting..."
+                : "Submit Request"}
             </Button>
 
             <div className="flex items-center justify-center gap-2 text-xs text-muted pt-1">
