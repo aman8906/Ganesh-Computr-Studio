@@ -21,8 +21,6 @@ const printingSlugs = [
   "wedding-decoration",
 ];
 
-// Distinct image per service instead of one repeated category photo —
-// reuses the same real photography already used elsewhere on the site.
 const serviceImages = {
   "printing-photocopy":
     "https://inkpaste.co.ke/wp-content/uploads/2023/03/photocopy-services-e1679521596330.jpg",
@@ -94,34 +92,37 @@ export default function PrintingStudio() {
                 whileHover={{ y: -6, rotateX: -3, rotateY: 3, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 220, damping: 16 }}
                 style={{ transformStyle: "preserve-3d" }}
-                className="glow-card bg-white flex flex-col h-full"
+                className="glow-card bg-white flex flex-col h-full group"
               >
-                <div className="relative h-36 overflow-hidden">
-                  <img
-                    src={serviceImages[item.slug]}
-                    alt={item.name}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-ink-gradient" />
-                  <span className="absolute top-3 left-3 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-marigold text-white">
-                    {item.turnaround}
-                  </span>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-semibold text-primary-dark text-lg">
-                    {item.name}
-                  </h3>
-                  <p className="text-muted text-[15px] mt-2 flex-1">
-                    {item.shortDescription}
-                  </p>
-                  <Link
-                    to={`/request-service?service=${item.slug}`}
-                    className="btn-primary mt-5"
-                  >
-                    Request This
-                  </Link>
-                </div>
+                <Link
+                  to={`/request-service?service=${item.slug}`}
+                  className="flex flex-col h-full"
+                  aria-label={`Request ${item.name}`}
+                >
+                  <div className="relative h-36 overflow-hidden">
+                    <img
+                      src={serviceImages[item.slug]}
+                      alt={item.name}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-ink-gradient" />
+                    <span className="absolute top-3 left-3 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-marigold text-white">
+                      {item.turnaround}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-semibold text-primary-dark text-lg">
+                      {item.name}
+                    </h3>
+                    <p className="text-muted text-[15px] mt-2 flex-1">
+                      {item.shortDescription}
+                    </p>
+                    <span className="btn-primary mt-5 text-center">
+                      Request This
+                    </span>
+                  </div>
+                </Link>
               </motion.div>
             </motion.div>
           ))}

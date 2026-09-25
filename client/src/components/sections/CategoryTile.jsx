@@ -9,13 +9,15 @@ export default function CategoryTile({ category }) {
   const visual = categoryVisuals[category.slug];
   const IconComponent = Icons[visual?.icon] || Icons.LayoutGrid;
 
-  // Safety net: if a category is ever added to categories[] without a matching
-  // entry in categoryImages.js, skip rendering this tile instead of crashing.
   if (!visual) return null;
 
   return (
     <motion.div variants={gridItem} style={{ perspective: 1000 }}>
-      <div className="group relative h-64 rounded-lg overflow-hidden glow-card">
+      <Link
+        to={`/services?category=${category.slug}`}
+        className="group relative h-64 rounded-lg overflow-hidden glow-card block"
+        aria-label={`Explore ${category.name}`}
+      >
         <motion.div
           whileHover={{ rotateX: -3, rotateY: 3, scale: 1.02 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
@@ -31,7 +33,7 @@ export default function CategoryTile({ category }) {
           <div className="absolute inset-0 bg-ink-gradient" />
         </motion.div>
 
-        {/* Floating 3D icon badge — decorative only, not clickable */}
+        {/* Floating 3D icon badge — decorative only */}
         <span
           className={`absolute top-4 right-4 flex h-11 w-11 items-center justify-center rounded-xl ${visual.tag} shadow-glow pointer-events-none`}
         >
@@ -48,15 +50,12 @@ export default function CategoryTile({ category }) {
             {category.name}
           </h3>
 
-          {/* Only this button is clickable/navigable — not the rest of the card */}
-          <Link
-            to={`/services?category=${category.slug}`}
-            className="inline-flex items-center gap-1.5 self-start text-sm font-semibold text-white bg-white/15 backdrop-blur-sm px-3.5 py-2 rounded-full hover:bg-white/25 transition-colors w-fit"
-          >
+          {/* Visual "button" — whole tile is already the link */}
+          <span className="inline-flex items-center gap-1.5 self-start text-sm font-semibold text-white bg-white/15 backdrop-blur-sm px-3.5 py-2 rounded-full group-hover:bg-white/25 transition-colors w-fit">
             Explore <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+          </span>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
